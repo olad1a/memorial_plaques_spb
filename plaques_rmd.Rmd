@@ -330,7 +330,7 @@ plaques[ID == "2805549232", Year := "До 1977"]
 pl_longitude <- c()
 pl_latitude <-  c()
 
-register_google(key = "AIzaSyApbGcAM8vQ13zp-sZUm0skQjRBWwCdVe8")
+register_google(key = "")
 
 for (row in 1:nrow(plaques)) {
   curr_addr <- plaques[row, "Address"]
@@ -764,7 +764,7 @@ ggplot(filter(new_plaques, what_did == "умер"| what_did == "жил"), aes(x 
 
 ##  Let's look at their locations.
 ```{r, echo=FALSE}
-register_google(key = "AIzaSyApbGcAM8vQ13zp-sZUm0skQjRBWwCdVe8")
+register_google(key = "")
 map <- get_map(location = c(lon = 30.308300, lat = 59.931770), size = c(640, 640), zoom = 12)
 
 ggmap(map) + geom_point(aes(x = pl_longitude, y = pl_latitude), size = 1, data = new_plaques) +
